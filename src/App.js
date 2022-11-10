@@ -1,5 +1,5 @@
 import "./App.css";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import bakeryData from "./assets/bakery-data.json";
 
 /* ####### DO NOT TOUCH -- this makes the image URLs work ####### */
@@ -11,43 +11,50 @@ bakeryData.forEach((item) => {
 function App() {
   // TODO: use useState to create a state variable to hold the state of the cart
   /* add your cart state code here */
-  const [ordered1, setOrdered1] = useState(0);
-  const [ordered2, setOrdered2] = useState(0);
-  const [ordered3, setOrdered3] = useState(0);
-  const [ordered4, setOrdered4] = useState(0);
-  const [ordered5, setOrdered5] = useState(0);
-  const [ordered6, setOrdered6] = useState(0);
-  const [ordered7, setOrdered7] = useState(0);
-  const [ordered8, setOrdered8] = useState(0);
-  const [ordered9, setOrdered9] = useState(0);
-  const [ordered10, setOrdered10] = useState(0);
-  const [ordered11, setOrdered11] = useState(0);
-  const [ordered12, setOrdered12] = useState(0);
-  const [ordered13, setOrdered13] = useState(0);
-  const [ordered14, setOrdered14] = useState(0);
-  const setArray = [setOrdered1,setOrdered2,setOrdered3,setOrdered4,setOrdered5,setOrdered6,setOrdered7,setOrdered8,setOrdered9,setOrdered10,setOrdered11,setOrdered12,setOrdered13,setOrdered14]
-  const getArray = [ordered1,ordered2,ordered3,ordered4,ordered5,ordered6,ordered7,ordered8,ordered9,ordered10,ordered11,ordered12,ordered13,ordered14]
-  let current = 0
-  let myFunction = function () {
-    return setOrdered1(ordered1 + 1);
+  const [array, setArray] = useState([0,0,0,0,0,0,0,0,0,0,0,0,0,0])
+  const [costStr, setCostStr] = useState("")
+  const names = ["Chocolate Chip Cookies","Matcha Mille Crepe Cake","Egg Custard Bun","Steamed Taro Buns","Chocolate Fudge Brownie","Macarons","Multigrain Bread","Croissant","Toast with Butter","Tiramisu","Egg Tart","Everything Bagel","Gingerbread Man","Cheesecake","Cream Puff"]
+  const costs = [7.99,4.99,2.99,5.99,3.99,4.99,4.99,2.99,1.99,3.99,2.99,2.99,2.99,3.99,2.99]
+  const [total, setTotal] = useState(0)
+  function listCart() {
+    var tempStr = ""
+    {array.map((element, index) => {
+      if (element != 0) {
+        tempStr = tempStr + element.toString() + "x " + names[index] + "\n"
+      }
+    })}
+    setCostStr(tempStr + "\nTotal: $" + total.toFixed(2) +"\n")
+    console.log(costStr)
   };
+  function myFunction(x) {
+    let arrayCopy = array
+    arrayCopy[x] = array[x] + 1
+    setTotal(total + costs[x])
+    setArray(arrayCopy)
+    console.log(array)
+  };
+
+  useEffect(() => {
+    listCart()
+  }, [total]);
   return (
     <div className="App">
       <h1>Will & Jack's Bakery</h1> {/* TODO: personalize your bakery (if you want) */}
       <div className="itemsAndCart">
         <div className="items">
         {bakeryData.map((item, index) => ( // TODO: map bakeryData to BakeryItem components
-            <div className="item" id={index}>
+            <div className="item">
               <p>{item.name}</p>
               <img src={item.image}/>
-              <button type="button" onClick={myFunction}>Add to Cart!</button>
+              <p>${item.price}</p>
+              <button type="button" onClick={() => myFunction(index)}>Add to Cart!</button>
             </div>
         ))}
         </div>
 
         <div className="cart">
           <h2>Cart</h2>
-          {ordered1}
+          {costStr}
         </div>
       </div>
     </div>

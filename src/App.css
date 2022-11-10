@@ -10,6 +10,7 @@
 
 .itemsAndCart{
   display: flex;
+  padding-bottom: 1%;
 }
 
 .items{
@@ -19,12 +20,21 @@
   align-items: center;
 }
 
+button{
+  cursor:pointer;
+  background-color: pink;
+  border-radius: 4px;
+  margin-top: 7px;
+}
+
 .item{
   width: 200px;
+  border-style: solid;
   display: flex;
   flex-direction: column;
   padding: 10px;
   align-items: center;  
+  border-color: pink;
 }
 
 img{
@@ -34,6 +44,7 @@ img{
 p{
   width: 200px;
   text-align: center;
+  white-space: pr
 }
 
 .cart{
