@@ -20,7 +20,7 @@ function App() {
     var tempStr = ""
     {array.map((element, index) => {
       if (element != 0) {
-        tempStr = tempStr + element.toString() + "x " + names[index] + "\n"
+        tempStr = tempStr + element.toString() + "x " + names[index] + ": $" + (array[index] * costs[index]).toFixed(2) + "\n"
       }
     })}
     setCostStr(tempStr + "\nTotal: $" + total.toFixed(2) +"\n")
@@ -54,7 +54,9 @@ function App() {
 
         <div className="cart">
           <h2>Cart</h2>
+          <p>
           {costStr}
+          </p>
         </div>
       </div>
     </div>

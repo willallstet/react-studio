@@ -43,8 +43,8 @@ img{
 
 p{
   width: 200px;
-  text-align: center;
-  white-space: pr
+  text-align: left;
+  white-space: pre;
 }
 
 .cart{
