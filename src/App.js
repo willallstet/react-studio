@@ -11,18 +11,39 @@ bakeryData.forEach((item) => {
 function App() {
   // TODO: use useState to create a state variable to hold the state of the cart
   /* add your cart state code here */
-
+  const [ordered1, setOrdered1] = useState(0);
+  const [ordered2, setOrdered2] = useState(0);
+  const [ordered3, setOrdered3] = useState(0);
+  const [ordered4, setOrdered4] = useState(0);
+  const [ordered5, setOrdered5] = useState(0);
+  const [ordered6, setOrdered6] = useState(0);
+  const [ordered7, setOrdered7] = useState(0);
+  const [ordered8, setOrdered8] = useState(0);
+  const [ordered9, setOrdered9] = useState(0);
+  const [ordered10, setOrdered10] = useState(0);
+  const [ordered11, setOrdered11] = useState(0);
+  const [ordered12, setOrdered12] = useState(0);
+  const [ordered13, setOrdered13] = useState(0);
+  const [ordered14, setOrdered14] = useState(0);
+  const setArray = [setOrdered1,setOrdered2,setOrdered3,setOrdered4,setOrdered5,setOrdered6,setOrdered7,setOrdered8,setOrdered9,setOrdered10,setOrdered11,setOrdered12,setOrdered13,setOrdered14]
+  const getArray = [ordered1,ordered2,ordered3,ordered4,ordered5,ordered6,ordered7,ordered8,ordered9,ordered10,ordered11,ordered12,ordered13,ordered14]
+  let myFunction = function () {
+    return setOrdered1(ordered1 + 1);
+  };
   return (
     <div className="App">
-      <h1>My Bakery</h1> {/* TODO: personalize your bakery (if you want) */}
-
+      <h1>Will & Jack's Bakery</h1> {/* TODO: personalize your bakery (if you want) */}
+      <div className="items">
       {bakeryData.map((item, index) => ( // TODO: map bakeryData to BakeryItem components
-        <p>Bakery Item {index}</p> // replace with BakeryItem component
+          <><p>{item.name}</p>
+          <img src={item.image} onClick={myFunction}/>
+          </>
       ))}
+      </div>
 
       <div>
         <h2>Cart</h2>
-        {/* TODO: render a list of items in the cart */}
+        {ordered1}
       </div>
     </div>
   );

@@ -7,3 +7,13 @@
 .BakeryItem {
   
 }
+
+.itmes{
+  display: flex;
+  flex-wrap: wrap;
+  width: 100%;
+}
+
+img{
+  width: 20%;
+}
