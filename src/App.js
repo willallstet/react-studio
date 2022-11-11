@@ -46,6 +46,7 @@ function App() {
             <div className="item">
               <p>{item.name}</p>
               <img src={item.image}/>
+              <p>{item.description}</p>
               <p>${item.price}</p>
               <button type="button" onClick={() => myFunction(index)}>Add to Cart!</button>
             </div>
