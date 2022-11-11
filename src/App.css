@@ -8,6 +8,12 @@
   
 }
 
+h1{
+  text-align: center;
+  font-size: larger;
+  font-family:fantasy;
+}
+
 .itemsAndCart{
   display: flex;
   padding-bottom: 1%;
