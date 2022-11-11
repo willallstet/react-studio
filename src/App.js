@@ -55,9 +55,9 @@ function App() {
 
         <div className="cart">
           <h2>Cart</h2>
-          <p>
+          <div className="cart">
           {costStr}
-          </p>
+          </div>
         </div>
       </div>
     </div>
