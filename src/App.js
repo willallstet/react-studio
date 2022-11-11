@@ -11,7 +11,7 @@ bakeryData.forEach((item) => {
 function App() {
   // TODO: use useState to create a state variable to hold the state of the cart
   /* add your cart state code here */
-  const [array, setArray] = useState([0,0,0,0,0,0,0,0,0,0,0,0,0,0])
+  const [array, setArray] = useState([0,0,0,0,0,0,0,0,0,0,0,0,0,0,0])
   const [costStr, setCostStr] = useState("")
   const names = ["Chocolate Chip Cookies","Matcha Mille Crepe Cake","Egg Custard Bun","Steamed Taro Buns","Chocolate Fudge Brownie","Macarons","Multigrain Bread","Croissant","Toast with Butter","Tiramisu","Egg Tart","Everything Bagel","Gingerbread Man","Cheesecake","Cream Puff"]
   const costs = [7.99,4.99,2.99,5.99,3.99,4.99,4.99,2.99,1.99,3.99,2.99,2.99,2.99,3.99,2.99]
